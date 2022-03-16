@@ -34,15 +34,14 @@ boundaryField
         value           $internalField;
      }
     
-   /* porosity1
+   coolingOutlet1
     {
         type            zeroGradient;
     }
-    
-    porosity2
+    coolingOutlet2
     {
-        type            zeroGradient;
-    }*/
+         type           zeroGradient;
+    }
 
     inlet1
     {

@@ -49,6 +49,14 @@ boundaryField
          type            fixedValue;
          value            uniform 0.02;
     }
+    coolingOutlet1
+    {
+        type               zeroGradient;
+    }
+    coolingOutlet2
+    {
+        type               zeroGradient;
+    }
  
     }
 }

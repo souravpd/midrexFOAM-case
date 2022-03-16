@@ -31,20 +31,20 @@ boundaryField
     }
     outletSolid
     {
-        type              inletOutlet;
+        type            inletOutlet;
         value           uniform (0 0 0);
         inletValue      uniform (0 0 0);
     }
-   /* porosity1
+    coolingOutlet1
     {
-        type            slip;
-        value           uniform (0 0 0);
+        type            flowRateInletVelocity;
+        volumetricFlowRate  constant 0.001;
     }
-    porosity2
+    coolingOutlet2
     {
-        type            slip;
-        value           uniform (0 0 0);
-    }*/
+        type            flowRateInletVelocity;
+        volumetricFlowRate  constant 0.001;
+    }
     inlet1
     {
         type            flowRateInletVelocity;

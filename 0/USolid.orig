@@ -41,6 +41,14 @@ boundaryField
     {
         type            noSlip; 
     }
+     coolingOutlet1
+    {
+       type           noSlip;
+    }
+    coolingOutlet2
+    {
+        type            noSlip; 
+    }
     outlet
       {
         type            uniformFixedValue;

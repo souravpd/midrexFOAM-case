@@ -41,6 +41,16 @@ boundaryField
         type            calculated;
         value           uniform 0;
     }
+    coolingOutlet1
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    coolingOutlet2
+    {
+        type            calculated;
+        value           uniform 0;
+    }
     fixedWalls
     {
         type            calculated;

@@ -36,6 +36,15 @@ boundaryField
      type               zeroGradient;
     }
 
+    coolingOutlet1
+    {
+        type               zeroGradient;
+    }
+    coolingOutlet2
+    {
+        type               zeroGradient;
+    }
+
     inlet1
     {
         type            fixedValue;
