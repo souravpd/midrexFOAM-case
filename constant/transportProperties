@@ -17,8 +17,8 @@ FoamFile
 transportModel  Newtonian;
 
 nu              [0 2 -1 0 0 0 0] 1.5e-05;
-DTSolid         DTSolid [0 2 -1 0 0 0 0] 1e-4;
-DTGas           DTGas [0 2 -1 0 0 0 0] 2e-4;
+DTSolid         DTSolid [0 2 -1 0 0 0 0] 1e-5;
+DTGas           DTGas [0 2 -1 0 0 0 0] 2e-5;
 heffSolid       heffSolid [0 0 -1 0 0 0 0] 1;
 heffGas         heffGas [0 0 -1 0 0 0 0] 1;
 phases          (solid gas);

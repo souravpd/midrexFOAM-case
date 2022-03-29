@@ -30,32 +30,33 @@ boundaryField
      }
     outletSolid
     {
-     type               zeroGradient;
+     
+        type            uniformFixedValue;
+        uniformValue    constant 314;
+        value           uniform 314;
     }
     coolingOutlet1
     {
-        type            uniformFixedValue;
-        uniformValue    constant 1233;
-        value           uniform 1233;
+        type            zeroGradient;
+      
     }
     coolingOutlet2
     {
-        type            uniformFixedValue;
-        uniformValue    constant 1233;
-        value           uniform 1233;
+        type            zeroGradient;
+      
     }
 
     inlet1
     {
         type            uniformFixedValue;
-        uniformValue    constant 316;
-        value           uniform 316;
+         uniformValue    constant 1233;
+        value           uniform 1233;
     }
     inlet2
     {
         type            uniformFixedValue;
-        uniformValue    constant 316;
-        value           uniform 316;
+         uniformValue    constant 1233;
+        value           uniform 1233;
     }
     outlet
       {

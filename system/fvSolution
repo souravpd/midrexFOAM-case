@@ -63,13 +63,15 @@ solvers
         tolerance       1e-08;
         relTol          0;
     }
-        "(CO|CO2|H2|H2O|CH4)"
+    
+    "(gasC_.*|solidC_.*)"
     {
-        solver          PBiCGStab;
-        preconditioner  DILU;
-        tolerance       1e-08;
-        relTol          0.0001;
-    }
+        solver           PBiCGStab;
+        preconditioner   DILU;
+        tolerance        1e-7;
+        relTol           0;
+    };
+
 }
 
 simple

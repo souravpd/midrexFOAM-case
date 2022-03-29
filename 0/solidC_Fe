@@ -11,7 +11,7 @@ FoamFile
     format      ascii;
     class       volScalarField;
     location    "0";
-    object      Fe2O3;
+    object      Fe;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -47,7 +47,17 @@ boundaryField
     outlet
       {
          type            fixedValue;
-         value            uniform 0.98;
+         value            uniform 0.02;
+    }
+    coolingOutlet1
+    {
+        type               zeroGradient;
+    }
+    coolingOutlet2
+    {
+        type               zeroGradient;
+    }
+ 
     }
 }
 

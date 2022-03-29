@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform 0;
+internalField   uniform 180000;
 
 boundaryField
 {
@@ -36,25 +36,29 @@ boundaryField
     
    coolingOutlet1
     {
-        type            zeroGradient;
+        type            totalPressure;
+        p0              177325;
     }
     coolingOutlet2
     {
-         type           zeroGradient;
+        type            totalPressure;
+        p0              177325;
     }
 
     inlet1
     {
-        type            zeroGradient;
+        type            fixedValue;
+        value           $internalField;
     }
     inlet2
     {
-         type           zeroGradient;
+         type            fixedValue;
+        value           $internalField;
     }
     outlet
     {
-        type            fixedValue;
-        value           $internalField;
+         type            totalPressure;
+        p0               144325;
        
     }
 }

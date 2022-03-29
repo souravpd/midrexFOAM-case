@@ -11,7 +11,7 @@ FoamFile
     format      ascii;
     class       volScalarField;
     location    "0";
-    object      CO;
+    object      FeO;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -21,7 +21,7 @@ internalField   uniform 0;
 
 boundaryField
 {
-    frontAndBack
+       frontAndBack
     {
         type            empty;
     }
@@ -31,25 +31,23 @@ boundaryField
      }
     outletSolid
     {
-     type               zeroGradient;
+        type            inletOutlet;
+        inletValue      uniform 0.0;
+        value           uniform 0.0;
     }
 
     inlet1
     {
-        type            fixedValue;
-       value            uniform 0.35;
+        type          zeroGradient;
     }
     inlet2
     {
-        type            fixedValue;
-       value            uniform 0.35;
+      type          zeroGradient;
     }
     outlet
       {
-          type            inletOutlet;
-        inletValue      uniform 0.0;
-        value           uniform 0.0;
- 
+         type            fixedValue;
+         value            uniform 0.98;
     }
     coolingOutlet1
     {

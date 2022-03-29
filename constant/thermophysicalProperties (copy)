@@ -10,40 +10,40 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    location    "system";
-    object      controlDict;
+    location    "constant";
+    object      thermophysicalProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     midrexFoam;
 
-startFrom       startTime;
+thermoType
+{
+    type            hePsiThermo;
+    mixture         homogeneousMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
 
-startTime       0;
-
-stopAt          endTime;
-
-endTime         0.5;
-
-deltaT          0.005;
-
-writeControl     adjustableRunTime;
-
-writeInterval   0.005;
-
-purgeWrite      0;
-
-writeFormat     ascii;
-
-writePrecision  6;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable true;
+mixture
+{
+    specie
+    {
+        molWeight   28.9;
+    }
+    thermodynamics
+    {
+        Cp          1005;
+        Hf          0;
+    }
+    transport
+    {
+        As          1.4792e-06;
+        Ts          116;
+    }
+}
 
 
 // ************************************************************************* //

@@ -52,8 +52,8 @@ boundaryField
     outlet
       {
         type            uniformFixedValue;
-        uniformValue    constant (-10 0 0);
-        value           uniform (-10 0 0);
+        uniformValue    constant (0 -100 0);
+        value           uniform (0 -100 0);
     }
 }
 

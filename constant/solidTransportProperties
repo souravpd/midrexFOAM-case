@@ -10,40 +10,19 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    location    "system";
-    object      controlDict;
+    object      transportProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Fe
+{
+    diffusionModel  constant;
+    D           D           [0 2 -1 0 0 0 0] 0.0;
+}
+    
+FeO
+{
+    diffusionModel  constant;
+    D           D           [0 2 -1 0 0 0 0] 0.0;
+}
+ 
 
-application     midrexFoam;
-
-startFrom       startTime;
-
-startTime       0;
-
-stopAt          endTime;
-
-endTime         0.5;
-
-deltaT          0.005;
-
-writeControl     adjustableRunTime;
-
-writeInterval   0.005;
-
-purgeWrite      0;
-
-writeFormat     ascii;
-
-writePrecision  6;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable true;
-
-
-// ************************************************************************* //

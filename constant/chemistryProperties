@@ -10,40 +10,31 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    location    "system";
-    object      controlDict;
+    location    "constant";
+    object      chemistryProperties;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     midrexFoam;
+chemistryType
+{
+    solver            EulerImplicit;
+}
 
-startFrom       startTime;
+chemistry           on;
 
-startTime       0;
+initialChemicalTimeStep 1e-07;
 
-stopAt          endTime;
+EulerImplicitCoeffs
+{
+    cTauChem        1;
+    equilibriumRateLimiter off;
+}
 
-endTime         0.5;
-
-deltaT          0.005;
-
-writeControl     adjustableRunTime;
-
-writeInterval   0.005;
-
-purgeWrite      0;
-
-writeFormat     ascii;
-
-writePrecision  6;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable true;
-
+odeCoeffs
+{
+    solver          Rosenbrock43;
+    absTol          1e-8;
+    relTol          0.01;
+}
 
 // ************************************************************************* //
