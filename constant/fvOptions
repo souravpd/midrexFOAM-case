@@ -16,8 +16,12 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 
+#include "calculateDandF.H"
+
+
 porosityBlockage
 {
+
     type            explicitPorositySource;
     active          yes;
 
@@ -31,8 +35,8 @@ porosityBlockage
         DarcyForchheimerCoeffs
         {
     	// e 0.35
-    	 d   (1e4 1e4 1e10);
-         f   (0 0 0);
+    	 d   ($porosityD $porosityD 1e10);
+         f   ($porosityF $porosityF 0);
 
             coordinateSystem
             {

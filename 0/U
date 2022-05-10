@@ -31,8 +31,8 @@ boundaryField
     }
     outletSolid
     {
-       type            flowRateInletVelocity;
-        volumetricFlowRate  constant 25;
+        type            fixedValue;
+        value           uniform (0 2.5 0);
     }
     coolingOutlet1
     {
@@ -48,13 +48,13 @@ boundaryField
     }
     inlet1
     {
-        type            flowRateInletVelocity;
-        volumetricFlowRate  constant 64;
+        type            fixedValue;
+        value           uniform (5 0 0);
     }
     inlet2
     {
-        type            flowRateInletVelocity;
-        volumetricFlowRate  constant 64;
+        type            fixedValue;
+        value           uniform (-5 0 0);
     }
     outlet
     {

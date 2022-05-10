@@ -10,57 +10,56 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volScalarField;
-    object      p;
+    location    "0";
+    object      Fe-solid
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 2 -2 0 0 0 0];
+dimensions      [0 0 0 0 0 0 0];
 
 internalField   uniform 0;
 
 boundaryField
 {
-    frontAndBack
+       frontAndBack
     {
         type            empty;
     }
     fixedWalls
     {
-        type            zeroGradient;
-    }
+        type          zeroGradient;
+     }
     outletSolid
     {
-        type            fixedValue;
-        value           $internalField;
-     }
-    
-   coolingOutlet1
-    {
-        type            totalPressure;
-        p0              177325;
-    }
-    coolingOutlet2
-    {
-        type            totalPressure;
-        p0              177325;
+        type            inletOutlet;
+        inletValue      uniform 0.0;
+        value           uniform 0.0;
     }
 
     inlet1
     {
-        type            fixedValue;
-        value           $internalField;
+        type          zeroGradient;
     }
     inlet2
     {
-         type            fixedValue;
-        value           $internalField;
+      type          zeroGradient;
     }
     outlet
+      {
+         type            fixedValue;
+         value            uniform 0.02;
+    }
+    coolingOutlet1
     {
-         type            totalPressure;
-        p0               144325;
-       
+        type               zeroGradient;
+    }
+    coolingOutlet2
+    {
+        type               zeroGradient;
+    }
+ 
     }
 }
+
 
 // ************************************************************************* //
